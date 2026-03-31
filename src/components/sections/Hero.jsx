@@ -16,6 +16,7 @@ export default function Hero() {
           className="w-full h-full object-cover editorial-filter"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-deep via-stone-deep/60 to-transparent"></div>
+        <div className="absolute inset-0 backdrop-blur-[2px] bg-stone-deep/10"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">

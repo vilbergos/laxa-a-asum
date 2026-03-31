@@ -98,7 +98,7 @@ export default function Overview() {
                       viewport={{ once: true, margin: '-100px' }}
                     >
                       <img
-                        src="https://images.unsplash.com/photo-1548425588-c1c6bb7d1c53?q=80&w=1200&auto=format&fit=crop"
+                        src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978944/The_River_2_lm3gnl.jpg"
                         alt="River View"
                         className="w-full h-full object-cover editorial-filter"
                       />
@@ -152,7 +152,7 @@ export default function Overview() {
                       viewport={{ once: true, margin: '-100px' }}
                     >
                       <img
-                        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop"
+                        src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774984670/Laxa_a_Asum_Media_cxqods.jpg"
                         alt="Ásgarður Lodge"
                         className="w-full h-full object-cover editorial-filter"
                       />
@@ -209,7 +209,7 @@ export default function Overview() {
                       viewport={{ once: true, margin: '-100px' }}
                     >
                       <img
-                        src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?q=80&w=1200&auto=format&fit=crop"
+                        src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978875/Fishing_nqioji.jpg"
                         alt="Salmon Fishing"
                         className="w-full h-full object-cover editorial-filter"
                       />
@@ -251,7 +251,7 @@ export default function Overview() {
                       viewport={{ once: true, margin: '-100px' }}
                     >
                       <img
-                        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop"
+                        src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978908/Desert_2.0_ojtfdy.jpg"
                         alt="Fine Dining"
                         className="w-full h-full object-cover editorial-filter"
                       />
@@ -306,7 +306,7 @@ export default function Overview() {
                       viewport={{ once: true, margin: '-100px' }}
                     >
                       <img
-                        src="https://images.unsplash.com/photo-1531168556467-80aace0d0144?q=80&w=1200&auto=format&fit=crop"
+                        src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978944/The_River_ixvn4t.jpg"
                         alt="Iceland Landscape"
                         className="w-full h-full object-cover editorial-filter"
                       />

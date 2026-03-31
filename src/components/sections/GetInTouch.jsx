@@ -160,7 +160,7 @@ export default function GetInTouch() {
               viewport={{ once: true }}
             >
               <img 
-                src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978874/Sunset_hykelv.jpg"
+                src="https://res.cloudinary.com/dyarmf7v1/image/upload/c_fill,g_auto,ar_3:4,w_900,q_90,f_auto/v1774978874/Sunset_hykelv.jpg"
                 alt="Laxá á Ásum Sunset" 
                 className="w-full h-full object-cover editorial-filter"
               />

@@ -44,7 +44,7 @@ export default function Navbar() {
                   : 'https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png'
                 }
                 alt="Laxá á Ásum"
-                className="h-10 w-auto transition-opacity duration-300"
+                className="h-16 w-auto transition-opacity duration-300"
               />
             </a>
           </div>
