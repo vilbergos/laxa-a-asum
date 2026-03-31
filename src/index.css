@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-parchment text-stone-deep font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-stone-deep;
+  }
+}
+
+@layer utilities {
+  .editorial-filter {
+    filter: grayscale(25%) sepia(10%) hue-rotate(5deg) contrast(1.05) brightness(0.95);
+    transition: filter 300ms ease, transform 300ms ease;
+  }
+  
+  .editorial-filter:hover {
+    filter: grayscale(0%) sepia(0%) hue-rotate(0deg) contrast(1) brightness(1);
+    transform: scale(1.03);
+  }
+  
+  .editorial-hr {
+    @apply border-t border-bone w-full block;
+  }
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
