@@ -17,18 +17,15 @@ export default function WeatherWidget() {
   }
 
   return (
-    <div className="border border-bone p-4 md:p-6 bg-parchment-light inline-block w-full max-w-sm ml-auto mt-12 md:mt-0 shadow-sm">
-      <div className="text-[10px] uppercase tracking-widest text-taupe mb-4 font-semibold">River Conditions</div>
-      <div className="flex flex-row items-center gap-6 text-stone-deep justify-between">
-        <div className="flex items-center gap-3">
-          {getWeatherIcon(data.weathercode)}
-          <span className="font-display text-3xl pl-1">{Math.round(data.temperature_2m)}°C</span>
-        </div>
-        <div className="w-px h-8 bg-bone"></div>
-        <div className="flex items-center gap-2">
-          <Wind size={20} weight="light" className="text-taupe" />
-          <span className="text-sm font-medium">{data.windspeed_10m} m/s</span>
-        </div>
+    <div className="flex flex-row items-center gap-6 text-bone">
+      <div className="flex items-center gap-3">
+        {getWeatherIcon(data.weathercode)}
+        <span className="font-display text-2xl">{Math.round(data.temperature_2m)}°C</span>
+      </div>
+      <div className="w-px h-8 bg-stone-warm/40"></div>
+      <div className="flex items-center gap-2 text-taupe">
+        <Wind size={18} weight="light" />
+        <span className="font-display text-2xl">{data.windspeed_10m}<span className="font-body text-xs ml-1">m/s</span></span>
       </div>
     </div>
   )

@@ -31,7 +31,7 @@ export default function OurTeam() {
     <section id="team" className="py-24 md:py-32 bg-parchment border-t border-bone">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <FadeUp>
-          <div className="text-taupe font-display tracking-[0.2em] text-sm opacity-80 mb-6 uppercase">05 / The Guardians</div>
+          <div className="text-taupe font-display tracking-[0.2em] text-sm opacity-80 mb-6 uppercase">04 / The Guardians</div>
           <h2 className="text-4xl md:text-5xl font-display text-stone-deep mb-16 leading-tight">
             The Guardians of the <i>River</i>
           </h2>

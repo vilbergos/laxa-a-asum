@@ -60,9 +60,15 @@ export default function Navbar() {
 
           {/* CTA Desktop */}
           <div className="hidden md:block">
-            <a href="#contact" className="bg-ember text-bone text-xs font-semibold tracking-widest px-6 py-3 hover:bg-stone-deep transition-colors duration-300">
-              BOOK A ROD
-            </a>
+            {scrolled ? (
+              <a href="#contact" className="bg-ember text-bone text-xs font-semibold tracking-widest px-6 py-3 hover:bg-stone-deep transition-colors duration-300">
+                BOOK A ROD
+              </a>
+            ) : (
+              <a href="#contact" className="border border-bone text-bone text-xs font-semibold tracking-widest px-6 py-3 hover:bg-bone/10 transition-colors duration-300">
+                BOOK A ROD
+              </a>
+            )}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -86,6 +92,11 @@ export default function Navbar() {
               <X />
             </button>
             <div className="flex flex-col items-center justify-center space-y-8 mt-12 w-full">
+              <img
+                src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png"
+                alt="Laxá á Ásum"
+                className="h-20 w-auto mb-4"
+              />
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.name}

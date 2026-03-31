@@ -31,7 +31,7 @@ export default function GetInTouch() {
           {/* Left: Form Area */}
           <div className="w-full lg:w-1/2">
             <FadeUp>
-              <div className="text-taupe font-display tracking-[0.2em] text-sm mb-6 uppercase opacity-80">08 / Contact</div>
+              <div className="text-taupe font-display tracking-[0.2em] text-sm mb-6 uppercase opacity-80">07 / Contact</div>
               <h2 className="text-4xl md:text-5xl font-display text-stone-deep mb-8 leading-tight">
                 Reserve Your <i>Rods</i>
               </h2>
@@ -132,36 +132,21 @@ export default function GetInTouch() {
               </form>
             </FadeUp>
 
-            <FadeUp delay={0.4}>
-              <div className="mt-16 block">
-                <div className="editorial-hr mb-8 w-full"></div>
-                <div className="flex flex-col gap-4 text-taupe text-sm font-medium">
-                  <span className="flex items-center gap-4">
-                    <span className="text-lg">📞</span> +354 694 6311
-                  </span>
-                  <span className="flex items-center gap-4">
-                    <span className="text-lg">✉</span> fishing@asum.is
-                  </span>
-                  <span className="flex items-center gap-4">
-                    <span className="text-lg">📍</span> Svínvetningabraut, 541 Blönduós
-                  </span>
-                </div>
-              </div>
-            </FadeUp>
           </div>
 
           {/* Right: Editorial Image */}
           <div className="hidden lg:block w-1/2">
-            <motion.div 
-              className="w-full h-full min-h-[700px] overflow-hidden rounded-t-[200px] rounded-br-sm rounded-bl-sm"
+            <motion.div
+              className="w-full h-[580px] overflow-hidden"
+              style={{ borderRadius: '160px 4px 4px 4px' }}
               whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
-              initial={{ clipPath: 'inset(100% 0 0% 0)' }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              viewport={{ once: true }}
+              initial={{ clipPath: 'inset(0 0 100% 0)' }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: '-100px' }}
             >
-              <img 
-                src="https://res.cloudinary.com/dyarmf7v1/image/upload/c_fill,g_auto,ar_3:4,w_900,q_90,f_auto/v1774978874/Sunset_hykelv.jpg"
-                alt="Laxá á Ásum Sunset" 
+              <img
+                src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_90,f_auto/v1774978874/Sunset_hykelv.jpg"
+                alt="Laxá á Ásum Sunset"
                 className="w-full h-full object-cover editorial-filter"
               />
             </motion.div>

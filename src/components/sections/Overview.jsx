@@ -296,21 +296,17 @@ export default function Overview() {
                     <div className="editorial-hr mt-6 mb-4"></div>
                     <p className="text-taupe text-xs tracking-wide">Svínvetningabraut, 541 Blönduós, Iceland</p>
                   </div>
-                  <div className="hidden lg:block">
-                    <motion.div
-                      className="w-full h-[500px] overflow-hidden"
-                      style={{ borderRadius: '160px 4px 4px 4px' }}
-                      whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
-                      initial={{ clipPath: 'inset(0 0 100% 0)' }}
-                      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                      viewport={{ once: true, margin: '-100px' }}
-                    >
-                      <img
-                        src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978944/The_River_ixvn4t.jpg"
-                        alt="Iceland Landscape"
-                        className="w-full h-full object-cover editorial-filter"
-                      />
-                    </motion.div>
+                  <div className="hidden lg:block w-full" style={{ aspectRatio: '5/6' }}>
+                    <iframe
+                      src="https://maps.google.com/maps?q=65.6667,-20.2833&z=10&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0, filter: 'grayscale(30%) contrast(1.05)', display: 'block' }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Laxá á Ásum location"
+                    />
                   </div>
                 </motion.div>
               )}

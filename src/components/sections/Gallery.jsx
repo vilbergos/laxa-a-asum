@@ -65,7 +65,7 @@ export default function Gallery() {
         <FadeUp>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
             <div>
-              <div className="text-taupe font-display tracking-[0.2em] text-sm mb-6 uppercase">06 / Gallery</div>
+              <div className="text-taupe font-display tracking-[0.2em] text-sm mb-6 uppercase">05 / Gallery</div>
               <h2 className="text-4xl md:text-5xl font-display text-bone leading-tight">
                 Life on the <i>River</i>
               </h2>

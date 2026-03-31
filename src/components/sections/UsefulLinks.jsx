@@ -1,5 +1,4 @@
 import { ChartBar, BookOpen, MapTrifold, Waves, House, MapPin } from '@phosphor-icons/react'
-import { motion } from 'framer-motion'
 import { FadeUp } from '../ui/FadeUp'
 
 const links = [
@@ -16,7 +15,7 @@ export default function UsefulLinks() {
     <section className="py-24 bg-parchment-light border-t border-bone">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <FadeUp>
-          <div className="text-taupe font-display tracking-[0.2em] text-sm mb-10 opacity-80 uppercase">07 / Useful Links</div>
+          <div className="text-taupe font-display tracking-[0.2em] text-sm mb-10 opacity-80 uppercase">06 / Useful Links</div>
         </FadeUp>
 
         <FadeUp delay={0.1}>
@@ -24,17 +23,16 @@ export default function UsefulLinks() {
             {links.map((link) => {
               const Icon = link.icon;
               return (
-                <motion.a
+                <a
                   key={link.name}
                   href={link.href}
                   target={link.external ? '_blank' : '_self'}
                   rel={link.external ? 'noreferrer' : ''}
-                  className="bg-parchment-light border border-bone p-6 flex flex-col items-start min-w-[240px] snap-center transition-colors hover:border-ember group"
-                  whileHover={{ y: -2 }}
+                  className="bg-parchment-light border border-bone p-6 flex flex-col items-start min-w-[240px] snap-center transition-all hover:border-ember hover:shadow-md group"
                 >
                   <Icon size={32} weight="light" className="text-ember mb-6 group-hover:scale-110 transition-transform" />
                   <span className="font-display text-xl text-stone-deep group-hover:text-ember transition-colors">{link.name}</span>
-                </motion.a>
+                </a>
               )
             })}
           </div>
