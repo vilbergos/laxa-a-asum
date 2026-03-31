@@ -36,12 +36,17 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           
           {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer flex items-center">
-            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 50 C 40 30, 60 70, 80 50" stroke={scrolled ? '#1A1917' : '#D9D3C7'} strokeWidth="2" strokeLinecap="round"/>
-              <circle cx="25" cy="45" r="2" fill={scrolled ? '#1A1917' : '#D9D3C7'} />
-            </svg>
-            <span className={`ml-3 font-display text-xl tracking-widest ${scrolled ? 'text-stone-deep' : 'text-bone'}`}>LAXÁ Á ÁSUM</span>
+          <div className="flex-shrink-0 cursor-pointer">
+            <a href="#home">
+              <img
+                src={scrolled
+                  ? 'https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978398/Laxa_Logo_1_u8nzxt.png'
+                  : 'https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png'
+                }
+                alt="Laxá á Ásum"
+                className="h-10 w-auto transition-opacity duration-300"
+              />
+            </a>
           </div>
 
           {/* Desktop Links */}

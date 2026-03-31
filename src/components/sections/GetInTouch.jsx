@@ -160,8 +160,8 @@ export default function GetInTouch() {
               viewport={{ once: true }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1548425588-c1c6bb7d1c53?q=80&w=1200&auto=format&fit=crop" 
-                alt="Lodge and Nature" 
+                src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978874/Sunset_hykelv.jpg"
+                alt="Laxá á Ásum Sunset" 
                 className="w-full h-full object-cover editorial-filter"
               />
             </motion.div>

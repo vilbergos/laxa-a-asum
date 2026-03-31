@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full z-0">
         <video
-          src="https://wordpress-1426216-5938202.cloudwaysapps.com/wp-content/uploads/2025/10/Laxa-a-Asum.mp4"
+          src="https://res.cloudinary.com/dyarmf7v1/video/upload/q_auto,f_auto/v1774978321/Laxa_a_Asum_kniyis.mp4"
           autoPlay
           loop
           muted

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import { FadeUp } from '../ui/FadeUp'
 
 const links = [
-  { name: 'Fishing Statistics', href: 'https://veiditolur.angling.is/veidisvaedi/laxa-a-asum', icon: ChartBar, external: true },
-  { name: 'Science Report', href: '#', icon: BookOpen, external: true },
-  { name: 'Download Fishing Map', href: '#', icon: MapTrifold, external: true },
+  { name: 'Fishing Statistics', href: 'https://res.cloudinary.com/dyarmf7v1/image/upload/v1774979189/Statistics_2023_1_elnup8.pdf', icon: ChartBar, external: true },
+  { name: 'Science Report', href: 'https://res.cloudinary.com/dyarmf7v1/image/upload/v1774979184/Laxa_Asum_2022_English_fb1wc9.pdf', icon: BookOpen, external: true },
+  { name: 'Download Fishing Map', href: 'https://res.cloudinary.com/dyarmf7v1/image/upload/v1774979191/Laxa_A4_Map_2020_1_midxhi.ai', icon: MapTrifold, external: true },
   { name: 'The River', href: '#overview', icon: Waves, external: false },
   { name: 'The Lodge', href: '#overview', icon: House, external: false },
   { name: 'Location', href: 'https://maps.google.com/?q=Svínvetningabraut,541 Blönduós', icon: MapPin, external: true },

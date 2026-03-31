@@ -6,7 +6,11 @@ export default function Footer() {
           
           {/* Col 1 */}
           <div>
-            <h3 className="font-display text-2xl tracking-widest mb-4">LAXÁ Á ÁSUM</h3>
+            <img
+              src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png"
+              alt="Laxá á Ásum"
+              className="h-12 w-auto mb-4"
+            />
             <p className="text-taupe text-sm max-w-xs leading-relaxed">
               World-class salmon fishing, pristine nature, and refined lodge accommodations await in North Iceland.
             </p>

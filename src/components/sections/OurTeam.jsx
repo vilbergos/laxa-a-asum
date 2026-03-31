@@ -8,21 +8,21 @@ const team = [
     title: 'Chairman VLÁ',
     email: 'laxa@asum.is',
     phone: '+354 858 6101',
-    image: 'https://randomuser.me/api/portraits/men/52.jpg'
+    image: 'https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978397/Pall_A_Jonsson_1_joztg2.jpg'
   },
   {
     name: 'Sturla Birgisson',
     title: 'Managing Director Laxás ehf.',
     email: 'fishing@asum.is',
     phone: '+354 694 6311',
-    image: 'https://randomuser.me/api/portraits/men/31.jpg'
+    image: 'https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978397/Sturla_lqwxvf.jpg'
   },
   {
     name: 'Freyja Kjartansdóttir',
     title: 'Lodge Manager',
     email: 'fishing@asum.is',
     phone: '+354 862 0713',
-    image: 'https://randomuser.me/api/portraits/women/44.jpg'
+    image: 'https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978397/Freyja_e2cysc.jpg'
   }
 ]
 
