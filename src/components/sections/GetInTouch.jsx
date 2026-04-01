@@ -33,7 +33,7 @@ export default function GetInTouch() {
             <FadeUp>
               <div className="text-taupe font-display tracking-[0.2em] text-sm mb-6 uppercase opacity-80">07 / Contact</div>
               <h2 className="text-4xl md:text-5xl font-display text-stone-deep mb-8 leading-tight">
-                Reserve Your <i>Rods</i>
+                Plan Your <i>Visit</i>
               </h2>
               <p className="text-stone-warm/80 mb-12 text-sm md:text-base leading-relaxed">
                 For booking inquiries, lodge information, or specific requirements, please reach out to our team. We aim to respond within 24 hours.
@@ -145,8 +145,8 @@ export default function GetInTouch() {
               viewport={{ once: true, margin: '-100px' }}
             >
               <img
-                src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_90,f_auto/v1774978874/Sunset_hykelv.jpg"
-                alt="Laxá á Ásum Sunset"
+                src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_90,f_auto/v1775083076/laxa-asum_dpkers.jpg"
+                alt="Laxá á Ásum"
                 className="w-full h-full object-cover editorial-filter"
               />
             </motion.div>

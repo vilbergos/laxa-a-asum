@@ -20,19 +20,61 @@ const getWeatherIcon = (code) => {
   return <Cloud size={28} weight="light" />
 }
 
+const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+const getForecastIcon = (code) => {
+  if (code <= 1) return <Sun size={22} weight="light" />
+  if (code <= 3) return <Cloud size={22} weight="light" />
+  if (code >= 51 && code <= 67) return <CloudRain size={22} weight="light" />
+  if (code >= 71 && code <= 77) return <Snowflake size={22} weight="light" />
+  if (code >= 95) return <CloudLightning size={22} weight="light" />
+  return <Cloud size={22} weight="light" />
+}
+
 function HeaderWeather() {
-  const { data } = useWeather()
+  const { data, forecast } = useWeather()
   if (!data) return null
   return (
-    <div className="md:text-right flex flex-col items-start md:items-end gap-2">
-      <div className="text-taupe tracking-[0.2em] text-xs uppercase font-body">River Conditions</div>
-      <div className="flex items-center gap-4 text-bone">
-        {getWeatherIcon(data.weathercode)}
-        <span className="font-display text-5xl md:text-6xl">{Math.round(data.temperature_2m)}°C</span>
-        <div className="w-px h-10 bg-stone-warm/30 hidden md:block"></div>
-        <div className="hidden md:flex items-center gap-2 text-taupe">
-          <Wind size={20} weight="light" />
-          <span className="font-display text-5xl md:text-6xl">{data.windspeed_10m}<span className="font-body text-base ml-1">m/s</span></span>
+    <div className="flex flex-col md:flex-row items-start md:items-end gap-8 md:gap-12 w-full">
+      {/* LEFT: 6-Day Forecast */}
+      {forecast && (
+        <div className="flex flex-col gap-3 flex-1 min-w-0">
+          <div className="text-taupe tracking-[0.2em] text-xs uppercase font-body">6-Day Forecast — Blönduós</div>
+          <div className="flex gap-3">
+            {forecast.map((day) => {
+              const d = new Date(day.date)
+              return (
+                <div key={day.date} className="flex flex-col items-center gap-2 w-12 flex-shrink-0">
+                  <span className="text-taupe text-[11px] tracking-widest uppercase font-body">{DAY_NAMES[d.getDay()]}</span>
+                  <span className="text-bone/80">{getForecastIcon(day.weathercode)}</span>
+                  <div className="flex flex-col items-center leading-none gap-0.5">
+                    <span className="font-display text-bone text-xl">{day.max}°</span>
+                    <span className="font-body text-taupe text-xs">{day.min}°</span>
+                  </div>
+                  <span className="flex items-center gap-0.5 text-taupe/80 text-xs font-body">
+                    <Wind size={11} weight="light" />{day.wind}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Divider */}
+      <div className="hidden md:block w-px self-stretch bg-stone-warm/20 flex-shrink-0"></div>
+
+      {/* RIGHT: River Conditions */}
+      <div className="flex flex-col gap-2 flex-shrink-0 md:items-end">
+        <div className="text-taupe tracking-[0.2em] text-xs uppercase font-body">River Conditions — Now</div>
+        <div className="flex items-center gap-3 text-bone">
+          {getWeatherIcon(data.weathercode)}
+          <span className="font-display text-3xl md:text-4xl">{Math.round(data.temperature_2m)}°C</span>
+          <div className="w-px h-8 bg-stone-warm/30"></div>
+          <div className="flex items-center gap-1.5 text-taupe">
+            <Wind size={16} weight="light" />
+            <span className="font-display text-2xl md:text-3xl">{data.windspeed_10m}<span className="font-body text-xs ml-1">m/s</span></span>
+          </div>
         </div>
       </div>
     </div>
@@ -67,11 +109,7 @@ export default function LiveStats() {
 
       {/* Header */}
       <div className="bg-stone-deep text-parchment py-12 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <div className="text-taupe tracking-[0.2em] text-xs mb-2 uppercase font-body">Current Season</div>
-            <div className="font-display text-5xl md:text-7xl text-bone">2026</div>
-          </div>
+        <div className="max-w-7xl mx-auto">
           <HeaderWeather />
         </div>
       </div>
@@ -83,9 +121,9 @@ export default function LiveStats() {
           <FadeUp>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
               <div>
-                <div className="text-taupe font-display tracking-[0.2em] text-sm mb-3 uppercase opacity-80">03 / Historical Return</div>
+                <div className="text-taupe font-display tracking-[0.2em] text-sm mb-3 uppercase opacity-80">03 / Historical Catch</div>
                 <h3 className="font-display text-3xl md:text-4xl text-stone-deep">
-                  Historical Return: 1975–2025
+                  Historical Catch: 1975–2025
                 </h3>
               </div>
               <div className="flex items-center gap-5 text-xs tracking-widest text-taupe uppercase font-semibold pb-1">
@@ -135,6 +173,9 @@ export default function LiveStats() {
             <div className="editorial-hr mb-8"></div>
             <p className="text-stone-warm/80 leading-relaxed text-sm md:text-base mb-6">
               The average catch over the past 40 years is around 1,000 salmon per year. The lowest catch was in 2012, when only 211 fish were caught, while the highest was in 1986, with 1,857 salmon.
+            </p>
+            <p className="text-stone-warm/80 leading-relaxed text-sm md:text-base mb-6">
+              In 2017 the number of rods on the river was increased from 2 to 4 rods following the decommissioning of the hydro power plant that fed into the river mid way from the lake.
             </p>
             <p className="text-stone-warm/80 leading-relaxed text-sm md:text-base mb-10">
               Looking at catch statistics per rod, Laxá á Ásum has consistently ranked among the highest in the country in terms of average catch per rod.

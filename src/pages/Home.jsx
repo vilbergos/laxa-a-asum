@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import Hero from '../components/sections/Hero'
@@ -9,17 +10,19 @@ import UsefulLinks from '../components/sections/UsefulLinks'
 import GetInTouch from '../components/sections/GetInTouch'
 
 export default function Home() {
+  const [overviewTab, setOverviewTab] = useState('The River')
+
   return (
     <div className="min-h-[100svh] flex flex-col pt-0 relative selection:bg-ember selection:text-white">
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        
-        <Overview />
+
+        <Overview activeTab={overviewTab} onTabChange={setOverviewTab} />
         <LiveStats />
         <OurTeam />
         <Gallery />
-        <UsefulLinks />
+        <UsefulLinks onSelectTab={setOverviewTab} />
         <GetInTouch />
       </main>
       <Footer />

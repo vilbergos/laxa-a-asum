@@ -4,8 +4,13 @@ import { FadeUp } from '../ui/FadeUp'
 
 const TABS = ['The River', 'The Lodge', 'The Fishing', 'The Service', 'Location']
 
-export default function Overview() {
-  const [activeTab, setActiveTab] = useState('The River')
+export default function Overview({ activeTab, onTabChange }) {
+  const [localTab, setLocalTab] = useState('The River')
+  const tab = activeTab ?? localTab
+  const setActiveTab = (t) => {
+    setLocalTab(t)
+    onTabChange && onTabChange(t)
+  }
 
   return (
     <section id="overview" className="py-24 md:py-32 bg-parchment relative overflow-hidden">
@@ -23,17 +28,17 @@ export default function Overview() {
           <FadeUp>
             {/* Tabs */}
             <div className="flex overflow-x-auto pb-4 mb-12 space-x-2 scrollbar-none border-b border-bone w-full">
-              {TABS.map(tab => (
+              {TABS.map(t => (
                 <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
+                  key={t}
+                  onClick={() => setActiveTab(t)}
                   className={`px-6 py-2 text-xs tracking-widest font-medium transition-all whitespace-nowrap ${
-                    activeTab === tab 
-                      ? 'bg-ember text-bone' 
+                    tab === t
+                      ? 'bg-ember text-bone'
                       : 'border border-bone text-stone-warm hover:bg-bone/30'
                   }`}
                 >
-                  {tab.toUpperCase()}
+                  {t.toUpperCase()}
                 </button>
               ))}
             </div>
@@ -41,7 +46,7 @@ export default function Overview() {
 
           <div className="relative min-h-[500px]">
             <AnimatePresence mode="wait">
-              {activeTab === 'The River' && (
+              {tab === 'The River' && (
                 <motion.div
                   key="river"
                   initial={{ opacity: 0, y: 10 }}
@@ -59,6 +64,9 @@ export default function Overview() {
                     </p>
                     <p className="text-stone-warm/80 mb-6 leading-relaxed text-sm md:text-base">
                       In 1932, the majority of the river water was diverted through the Laxarvatn hydroelectric power plant and released back into the river 7 km downstream. However, the power plant was decommissioned in 2014 and the river restored to its natural riverbed for its entire length from Lake Laxárvatn. The river flows for 15 km to the 3 km estuary, bringing the total fishable water to 18 km, fished with 4 rods.
+                    </p>
+                    <p className="text-stone-warm/80 mb-6 leading-relaxed text-sm md:text-base">
+                      In 2017 the number of rods on the river was increased from 2 to 4 rods following the decommissioning of the hydro power plant that fed into the river mid way from the lake.
                     </p>
                     <p className="text-stone-warm/80 mb-10 leading-relaxed text-sm md:text-base">
                       Earliest documentation on fishing in Laxá in Ásum is from the early 13th century. Since 1940 netting has been banned and Laxá in Ásum has been fly fishing only since 2001.
@@ -92,10 +100,9 @@ export default function Overview() {
                     <motion.div
                       className="w-full h-[400px] lg:h-[500px] overflow-hidden"
                       style={{ borderRadius: '160px 4px 4px 4px' }}
-                      whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
+                      animate={{ clipPath: 'inset(0 0 0% 0)' }}
                       initial={{ clipPath: 'inset(0 0 100% 0)' }}
                       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                      viewport={{ once: true, margin: '-100px' }}
                     >
                       <img
                         src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978944/The_River_2_lm3gnl.jpg"
@@ -107,7 +114,7 @@ export default function Overview() {
                 </motion.div>
               )}
 
-              {activeTab === 'The Lodge' && (
+              {tab === 'The Lodge' && (
                 <motion.div
                   key="lodge"
                   initial={{ opacity: 0, y: 10 }}
@@ -116,7 +123,7 @@ export default function Overview() {
                   transition={{ duration: 0.4 }}
                   className="grid grid-cols-1 lg:grid-cols-2 gap-12"
                 >
-                  <div>
+                  <div className="order-2 lg:order-1">
                     <h2 className="text-4xl md:text-5xl font-display text-stone-deep mb-8 leading-tight">
                       Ásgarður — A Five-Star <i>Refuge</i>
                     </h2>
@@ -142,14 +149,13 @@ export default function Overview() {
                     </div>
                     <div className="editorial-hr mt-6"></div>
                   </div>
-                  <div className="hidden lg:block">
+                  <div className="order-1 lg:order-2">
                     <motion.div
-                      className="w-full h-[500px] overflow-hidden"
+                      className="w-full h-[300px] lg:h-[500px] overflow-hidden"
                       style={{ borderRadius: '160px 4px 4px 4px' }}
-                      whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
+                      animate={{ clipPath: 'inset(0 0 0% 0)' }}
                       initial={{ clipPath: 'inset(0 0 100% 0)' }}
                       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                      viewport={{ once: true, margin: '-100px' }}
                     >
                       <img
                         src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774984670/Laxa_a_Asum_Media_cxqods.jpg"
@@ -161,7 +167,7 @@ export default function Overview() {
                 </motion.div>
               )}
 
-              {activeTab === 'The Fishing' && (
+              {tab === 'The Fishing' && (
                 <motion.div
                   key="fishing"
                   initial={{ opacity: 0, y: 10 }}
@@ -170,7 +176,7 @@ export default function Overview() {
                   transition={{ duration: 0.4 }}
                   className="grid grid-cols-1 lg:grid-cols-2 gap-12"
                 >
-                  <div>
+                  <div className="order-2 lg:order-1">
                     <h2 className="text-4xl md:text-5xl font-display text-stone-deep mb-8 leading-tight">
                       Iceland's <i>Crown Jewel</i>
                     </h2>
@@ -199,14 +205,13 @@ export default function Overview() {
                       To ensure the sustainability of the river system, only one salmon per rod per day is allowed to be kept, and all salmon measuring 70 cm or more must be released.
                     </p>
                   </div>
-                  <div className="hidden lg:block">
+                  <div className="order-1 lg:order-2">
                     <motion.div
-                      className="w-full h-[500px] overflow-hidden"
+                      className="w-full h-[300px] lg:h-[500px] overflow-hidden"
                       style={{ borderRadius: '160px 4px 4px 4px' }}
-                      whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
+                      animate={{ clipPath: 'inset(0 0 0% 0)' }}
                       initial={{ clipPath: 'inset(0 0 100% 0)' }}
                       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                      viewport={{ once: true, margin: '-100px' }}
                     >
                       <img
                         src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978875/Fishing_nqioji.jpg"
@@ -218,7 +223,7 @@ export default function Overview() {
                 </motion.div>
               )}
 
-              {activeTab === 'The Service' && (
+              {tab === 'The Service' && (
                 <motion.div
                   key="service"
                   initial={{ opacity: 0, y: 10 }}
@@ -227,7 +232,7 @@ export default function Overview() {
                   transition={{ duration: 0.4 }}
                   className="grid grid-cols-1 lg:grid-cols-2 gap-12"
                 >
-                  <div>
+                  <div className="order-2 lg:order-1">
                     <h2 className="text-4xl md:text-5xl font-display text-stone-deep mb-8 leading-tight">
                       Refined <i>Hospitality</i>
                     </h2>
@@ -241,14 +246,13 @@ export default function Overview() {
                       In addition to exceptional cuisine, the lodge offers a fine selection of wines, spirits, and Icelandic beers. We gladly accommodate individual preferences and special requests made prior to your arrival.
                     </p>
                   </div>
-                  <div className="hidden lg:block">
+                  <div className="order-1 lg:order-2">
                     <motion.div
-                      className="w-full h-[500px] overflow-hidden"
+                      className="w-full h-[300px] lg:h-[500px] overflow-hidden"
                       style={{ borderRadius: '160px 4px 4px 4px' }}
-                      whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
+                      animate={{ clipPath: 'inset(0 0 0% 0)' }}
                       initial={{ clipPath: 'inset(0 0 100% 0)' }}
                       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                      viewport={{ once: true, margin: '-100px' }}
                     >
                       <img
                         src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978908/Desert_2.0_ojtfdy.jpg"
@@ -260,7 +264,7 @@ export default function Overview() {
                 </motion.div>
               )}
 
-              {activeTab === 'Location' && (
+              {tab === 'Location' && (
                 <motion.div
                   key="location"
                   initial={{ opacity: 0, y: 10 }}
@@ -296,12 +300,12 @@ export default function Overview() {
                     <div className="editorial-hr mt-6 mb-4"></div>
                     <p className="text-taupe text-xs tracking-wide">Svínvetningabraut, 541 Blönduós, Iceland</p>
                   </div>
-                  <div className="hidden lg:block w-full" style={{ aspectRatio: '5/6' }}>
+                  <div className="w-full h-[320px] lg:h-auto" style={{ aspectRatio: undefined }}>
                     <iframe
-                      src="https://maps.google.com/maps?q=65.6667,-20.2833&z=10&output=embed"
+                      src="https://maps.google.com/maps?q=65.6378,-20.1512&z=7&output=embed"
                       width="100%"
                       height="100%"
-                      style={{ border: 0, filter: 'grayscale(30%) contrast(1.05)', display: 'block' }}
+                      style={{ border: 0, filter: 'grayscale(30%) contrast(1.05)', display: 'block', minHeight: '320px' }}
                       allowFullScreen=""
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"

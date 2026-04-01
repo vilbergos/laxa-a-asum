@@ -62,11 +62,11 @@ export default function Navbar() {
           <div className="hidden md:block">
             {scrolled ? (
               <a href="#contact" className="bg-ember text-bone text-xs font-semibold tracking-widest px-6 py-3 hover:bg-stone-deep transition-colors duration-300">
-                BOOK A ROD
+                ENQUIRIES
               </a>
             ) : (
               <a href="#contact" className="border border-bone text-bone text-xs font-semibold tracking-widest px-6 py-3 hover:bg-bone/10 transition-colors duration-300">
-                BOOK A ROD
+                ENQUIRIES
               </a>
             )}
           </div>
@@ -118,7 +118,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-8 border border-ember text-ember w-full text-center px-8 py-4 tracking-widest text-sm hover:bg-ember hover:text-bone transition-colors"
               >
-                BOOK A ROD
+                ENQUIRIES
               </motion.a>
             </div>
           </motion.div>

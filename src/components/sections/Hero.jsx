@@ -39,7 +39,7 @@ export default function Hero() {
               EXPLORE THE RIVER
             </a>
             <a href="#contact" className="bg-ember text-bone px-8 py-4 text-xs tracking-widest font-semibold hover:bg-stone-deep transition-colors text-center">
-              BOOK A ROD
+              ENQUIRIES
             </a>
           </StaggerChild>
         </StaggerParent>
