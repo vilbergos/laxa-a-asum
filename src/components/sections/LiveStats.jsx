@@ -52,12 +52,13 @@ function HeaderWeather() {
                     <span className="font-body text-taupe text-xs">{day.min}°</span>
                   </div>
                   <span className="flex items-center gap-0.5 text-taupe/80 text-xs font-body">
-                    <Wind size={11} weight="light" />{day.wind}
+                    <Wind size={11} weight="light" />{day.wind}<span className="text-[8px] opacity-70 ml-px">m/s</span>
                   </span>
                 </div>
               )
             })}
           </div>
+          <div className="text-taupe/50 text-[10px] font-body">Wind shows daily maximum m/s</div>
         </div>
       )}
 

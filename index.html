@@ -7,6 +7,13 @@
     <title>Laxá á Ásum — Iceland's Premier Salmon River</title>
   </head>
   <body class="bg-parchment text-stone-deep font-body antialiased selection:bg-ember selection:text-white">
+    <!-- Hidden form for Netlify form detection at build time -->
+    <form name="contact" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

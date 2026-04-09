@@ -10,12 +10,16 @@ export default function GetInTouch() {
     e.preventDefault()
     setStatus('loading')
     try {
-      // Formspree fallback placeholder action URL
-      await fetch('https://formspree.io/f/placeholder', {
+      const body = new URLSearchParams({
+        'form-name': 'contact',
+        ...formData,
+      }).toString()
+      const res = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
       })
+      if (!res.ok) throw new Error('Network response was not ok')
       setStatus('success')
       setFormData({ name: '', email: '', phone: '', message: '' })
     } catch (err) {
@@ -41,7 +45,7 @@ export default function GetInTouch() {
             </FadeUp>
 
             <FadeUp delay={0.2}>
-              <form onSubmit={handleSubmit} className="space-y-6 relative min-h-[400px]">
+              <form name="contact" data-netlify="true" onSubmit={handleSubmit} className="space-y-6 relative min-h-[400px]">
                 <AnimatePresence mode="wait">
                   {status === 'success' ? (
                     <motion.div
@@ -135,9 +139,9 @@ export default function GetInTouch() {
           </div>
 
           {/* Right: Editorial Image */}
-          <div className="hidden lg:block w-1/2">
+          <div className="hidden lg:flex flex-col w-1/2">
             <motion.div
-              className="w-full h-[580px] overflow-hidden"
+              className="w-full flex-1 max-h-[560px] overflow-hidden"
               style={{ borderRadius: '160px 4px 4px 4px' }}
               whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
               initial={{ clipPath: 'inset(0 0 100% 0)' }}
@@ -145,9 +149,9 @@ export default function GetInTouch() {
               viewport={{ once: true, margin: '-100px' }}
             >
               <img
-                src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_90,f_auto/v1775083076/laxa-asum_dpkers.jpg"
+                src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1775738941/Asum_1_Image_fteuxd.jpg"
                 alt="Laxá á Ásum"
-                className="w-full h-full object-cover editorial-filter"
+                className="w-full h-full object-cover object-top editorial-filter"
               />
             </motion.div>
           </div>
