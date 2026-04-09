@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Col 1: Logo */}
           <div>
             <img
-              src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png"
+              src="https://res.cloudinary.com/dyarmf7v1/image/upload/w_300,q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png"
               alt="Laxá á Ásum"
               className="h-20 w-auto mb-4"
             />

@@ -40,8 +40,8 @@ export default function Navbar() {
             <a href="#home">
               <img
                 src={scrolled
-                  ? 'https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978398/Laxa_Logo_1_u8nzxt.png'
-                  : 'https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png'
+                  ? 'https://res.cloudinary.com/dyarmf7v1/image/upload/w_300,q_auto,f_auto/v1774978398/Laxa_Logo_1_u8nzxt.png'
+                  : 'https://res.cloudinary.com/dyarmf7v1/image/upload/w_300,q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png'
                 }
                 alt="Laxá á Ásum"
                 className="h-16 w-auto transition-opacity duration-300"
@@ -93,7 +93,7 @@ export default function Navbar() {
             </button>
             <div className="flex flex-col items-center justify-center space-y-8 mt-12 w-full">
               <img
-                src="https://res.cloudinary.com/dyarmf7v1/image/upload/q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png"
+                src="https://res.cloudinary.com/dyarmf7v1/image/upload/w_300,q_auto,f_auto/v1774978398/Laxa_White_Logo_qdysh9.png"
                 alt="Laxá á Ásum"
                 className="h-20 w-auto mb-4"
               />
